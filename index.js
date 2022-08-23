@@ -1,13 +1,14 @@
-for (let i = 1; i < 21; i++) {
+require('dotenv').config()
 
-    if (i % 3 == 0 && i % 5 == 0) {
-        console.log('FizzBuzz')
-    } else if (i % 5 == 0) {
-        console.log('BUZZ')
-    } else if ( i % 3 == 0 ){
-        console.log('FIZZ')
-    }else{
-        console.log(i)
-    }
-    
-}
+let express = require('express')
+let app = express()
+
+const PORT = 8080
+
+app.get('/', (req, res) => {
+    res.send(`Server run on port: ${PORT}`)
+})
+
+app.listen(PORT, () => {
+    console.log(`Server run on port: ${PORT}`)
+})
