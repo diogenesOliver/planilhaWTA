@@ -1,8 +1,5 @@
 const transacoes = {
-    transacoes: [
-        { valor: 10, descricao: 'Pastel' },
-        { valor: 3, descricao: 'Doce' }
-    ]
+    transacoes: []
 }
 
 
