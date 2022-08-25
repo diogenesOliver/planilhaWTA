@@ -28,8 +28,7 @@ app.get('/transacoes', (req, res) => {
     })
 
     transacoes.saldo = saldo
-    console.log(saldo)
-
+    
     res.send(transacoes)
 })
 
