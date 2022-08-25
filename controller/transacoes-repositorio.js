@@ -1,18 +1,26 @@
 const transacoes = {
-    transacoes: [{
-        "valor": 25,
-        "descricao": "Pizza"
-    }]
+    transacoes: [
+        {
+            valor: 25,
+            descricao: "Pizza",
+            categoria: "Despesa"
+        },
+        {
+            valor: 3,
+            descricao: "Bolo",
+            categoria: "Receita"
+        }
+    ]
 }
 
 
 class TransacoesRepositorio {
 
-    listarTransacoes(){
+    listarTransacoes() {
         return transacoes
     }
 
-    criarTransacao(transacao){
+    criarTransacao(transacao) {
         const lista = transacoes.transacoes
         lista.push(transacao)
     }
