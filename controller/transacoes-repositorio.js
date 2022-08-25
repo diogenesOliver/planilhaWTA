@@ -1,7 +1,7 @@
 const transacoes = {
     transacoes: [{
-        "valor": 49,
-        "descricao": "pizza"
+        "valor": 25,
+        "descricao": "Pizza"
     }]
 }
 
