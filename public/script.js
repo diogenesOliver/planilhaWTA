@@ -85,7 +85,7 @@ async function enviarDadosTransacao(descricao, valor, categoria) {
 
 async function adicionarDespesa() {
   const descricaoDespesa = window.prompt('Qual a descricao de sua despesa?');
-  const valorDespesa = window.prompt('Qual o valor de sua despesa?');
+  const valorDespesa = window.prompt('Qual o valor de sua despesarenda?');
 
   await enviarDadosTransacao(descricaoDespesa, valorDespesa, "Despesa");
 
