@@ -13,6 +13,23 @@ app.use(express.static((`${__dirname}/public`)))
 app.get('/transacoes', (req, res) => {
     const repositorio = new TransacoesRepositorio()
     const transacoes = repositorio.listarTransacoes()
+
+    let saldo = 0
+    transacoes.transacoes.forEach((transacoes) => {
+        
+        if(transacoes.categoria === "Despesa"){
+            saldo = saldo - transacoes.valor
+        }
+        
+        if(transacoes.categoria === "Receita"){
+            saldo = saldo + transacoes.valor
+        }
+
+    })
+
+    transacoes.saldo = saldo
+    console.log(saldo)
+
     res.send(transacoes)
 })
 
