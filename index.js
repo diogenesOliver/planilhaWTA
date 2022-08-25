@@ -8,7 +8,7 @@ const TransacoesRepositorio = require('./controller/transacoes-repositorio.js')
 const PORT = process.env.PORT
 
 app.use(express.json())
-app.use(express.static((`${__dirname}/public/nav.html`)))
+app.use(express.static((`${__dirname}/public`)))
 
 app.get('/transacoes', (req, res) => {
     const repositorio = new TransacoesRepositorio()
