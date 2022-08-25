@@ -1,10 +1,12 @@
 const transacoes = {
-    transacoes: []
+    transacoes: [{
+        "valor": 49,
+        "descricao": "pizza"
+    }]
 }
 
 
 class TransacoesRepositorio {
-
 
     listarTransacoes(){
         return transacoes
