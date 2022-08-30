@@ -3,7 +3,7 @@ require('dotenv').config()
 let express = require('express')
 let app = express()
 
-const TransacoesRepositorio = require('./infra/transacoes-repositorio.js')
+const TransacoesRepositorio = require('./infra/sql-transacoes-repositorio.js')
 
 const PORT = process.env.PORT
 
