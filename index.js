@@ -3,16 +3,16 @@ require('dotenv').config()
 let express = require('express')
 let app = express()
 
-const TransacoesRepositorio = require('./controller/transacoes-repositorio.js')
+const TransacoesRepositorio = require('./infra/transacoes-repositorio.js')
 
 const PORT = process.env.PORT
 
 app.use(express.json())
 app.use(express.static((`${__dirname}/public`)))
 
-app.get('/transacoes', (req, res) => {
+app.get('/transacoes', async (req, res) => {
     const repositorio = new TransacoesRepositorio()
-    const transacoes = repositorio.listarTransacoes()
+    const transacoes = await repositorio.listarTransacoes()
 
     let saldo = 0
     transacoes.transacoes.forEach((transacoes) => {
@@ -32,12 +32,12 @@ app.get('/transacoes', (req, res) => {
     res.send(transacoes)
 })
 
-app.post('/transacoes', (req, res) => {
+app.post('/transacoes', async (req, res) => {
     const repositorio = new TransacoesRepositorio()
 
     const transacao = req.body
 
-    repositorio.criarTransacao(transacao)
+    await repositorio.criarTransacao(transacao)
     res.status(200).send(transacao)
 })
 
