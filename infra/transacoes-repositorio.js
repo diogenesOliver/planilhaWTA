@@ -2,7 +2,6 @@ const transacoes = {
     transacoes: []
 }
 
-
 class TransacoesRepositorio {
 
     listarTransacoes() {

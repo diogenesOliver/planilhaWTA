@@ -17,8 +17,19 @@ class SqlTransacoesRepositorio {
     }
 
     async criarTransacao(transacao) {
-        const lista = transacoes.transacoes
-        lista.push(transacao)
+        
+        const consulta = `INSERT INTO
+        transacoes(valor, descricao, categria)
+        VALUES ($1, $2, $3) RETURNING *`
+
+        const valores = [
+            transacao.valor,
+            transacao.descricao,
+            transacao.categria
+        ]
+
+        await pool.query(consulta, valores)
+
     }
 
 }
