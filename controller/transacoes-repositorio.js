@@ -1,16 +1,5 @@
 const transacoes = {
-    transacoes: [
-        {
-            valor: 25,
-            descricao: "Pizza",
-            categoria: "Despesa"
-        },
-        {
-            valor: 3,
-            descricao: "Bolo",
-            categoria: "Receita"
-        }
-    ]
+    transacoes: []
 }
 
 
