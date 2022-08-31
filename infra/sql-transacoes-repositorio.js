@@ -7,7 +7,7 @@ class SqlTransacoesRepositorio {
 
     async listarTransacoes() {
 
-        const resultado = await pool.query('SELECT * FROM transacoes')
+        const resultado = await pool.query('SELECT * FROM planilha')
         console.log(resultado.rows)
 
         return {
@@ -19,7 +19,7 @@ class SqlTransacoesRepositorio {
     async criarTransacao(transacao) {
         
         const consulta = `INSERT INTO
-        transacoes(valor, descricao, categria)
+        transacoes(valor, descricao, categoria)
         VALUES ($1, $2, $3) RETURNING *`
 
         const valores = [
