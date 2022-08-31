@@ -17,11 +17,11 @@ app.get('/transacoes', async (req, res) => {
     let saldo = 0
     transacoes.transacoes.forEach((transacoes) => {
         
-        if(transacoes.categria === "Despesa"){
+        if(transacoes.categoria === "Despesa"){
             saldo = saldo - transacoes.valor
         }
         
-        if(transacoes.categria === "Receita"){
+        if(transacoes.categoria === "Receita"){
             saldo = saldo + transacoes.valor
         }
 
